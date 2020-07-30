@@ -1,5 +1,4 @@
-# includes
-from ._bitwise import left
+from ._impl_ import left as shift_left
 
 
 # the $300 function
@@ -43,7 +42,7 @@ def copy(src, src_bit, tgt, tgt_bit, bit_len, lim=0):
 
 	# first case
 	if src_idx != src_lim:
-		src_msk |= left(src[src_idx] << 8, shift)
+		src_msk |= shift_left(src[src_idx] << 8, shift)
 		src_idx += 1
 
 	# copy whole bytes
@@ -52,7 +51,7 @@ def copy(src, src_bit, tgt, tgt_bit, bit_len, lim=0):
 
 		# copy from source
 		if src_idx != src_lim:
-			src_msk |= left(src[src_idx] << 8, shift)
+			src_msk |= shift_left(src[src_idx] << 8, shift)
 			src_idx += 1
 
 		# end case

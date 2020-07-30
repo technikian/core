@@ -1,7 +1,9 @@
-# includes
 import random
 import unittest
-from . import _bitwise as bitwise
+from core import logical as bitwise
+
+
+# todo this unittest has ceased to work
 
 
 def random_bytearray(length):
@@ -23,13 +25,13 @@ def random_ascii(length):
 
 
 types = (
-	(bool,		lambda a, b: bool(random.randint(0, 1))),
-	(int,		lambda a, b: random.randint(a, b)),
-	(float,		lambda a, b: random.random() * (b - a) + a),
-	(complex,	lambda a, b: complex(random.randint(a, b), random.randint(a, b))),
-	(str,		lambda a, b: random_ascii(random.randint(a, b))),
-	(tuple,		lambda a, b: tuple()),
-	(list,		lambda a, b: list())
+	(bool, lambda a, b: bool(random.randint(0, 1))),
+	(int, lambda a, b: random.randint(a, b)),
+	(float, lambda a, b: random.random() * (b - a) + a),
+	(complex, lambda a, b: complex(random.randint(a, b), random.randint(a, b))),
+	(str, lambda a, b: random_ascii(random.randint(a, b))),
+	(tuple, lambda a, b: tuple()),
+	(list, lambda a, b: list())
 )
 
 

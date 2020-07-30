@@ -1,3 +1,2 @@
-# includes
-from ._bitwise import get, set, left, right, msb
-from ._copy import *
+from ._impl_ import get, set, left, right, hob, lob
+from ._copy_ import copy

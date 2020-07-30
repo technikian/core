@@ -1,5 +1,6 @@
 
 def partition(src_str, sep):
+	# todo make generic to all iterables, not just str
 	r = []
 	# first partition
 	parted = src_str.partition(sep)
